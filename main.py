@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
-from .news import router as news_router
+from news import router as news_router
 
 app = FastAPI()
 
@@ -12,7 +12,7 @@ register_tortoise(
     app,
     db_url="sqlite://db.sqlite3",
     modules={"models": ["models"]},
-    generate_schemas=True,
+    generate_schemas=False,
     add_exception_handlers=True,
 )
 
